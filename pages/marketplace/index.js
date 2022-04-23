@@ -2,6 +2,7 @@ import MarketPlaceCard from "../../components/MarketPlacePage/MarketPlaceCard";
 export default function MarketPlace() {
     return (
         <>
+      
             <section>
                 <div className="text-center text-slate-900 mt-28">
                     <h1 className="text-5xl font-bold tracking-wider">Select a Marketplace</h1>
