@@ -1,19 +1,18 @@
-import React, { useState } from "react"
+import Link from "next/link";
 
 const Header = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <>
       <nav >
-        <div className="flex flex-row space-x-14  bg-skobeloff-200">
+        <div className="flex flex-row space-x-14 bg-slate-900">
           <div className="ml-16">
-            <img src="/WTF.png"></img>
+            <Link href={"/"}><img src="/WTF.svg" width={"90"}></img></Link>
           </div>
-          <div className="mt-8">
-            Collections
+          <div className="mt-8 text-neutral-200 hover:text-[#299197]">
+           <Link href={"/marketplace"}>MarketPlace</Link>
           </div>
-          <div className="mt-8">
-            About
+          <div className="mt-8 text-neutral-200 hover:text-[#299197]">
+          <Link href={"/about"}>About</Link>
           </div>
         </div>
       </nav>

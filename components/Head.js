@@ -6,7 +6,7 @@ const MyHead = () => {
         <Head>
             <title>WhatTheFloor</title>
             <meta name="description" content=" Insights of NFT projects in Zilliqa BlockChain." />
-            <link rel="icon" href="/WTF.png" />
+            <link rel="icon" href="/WTF.svg" />
         </Head>
     )
 }
