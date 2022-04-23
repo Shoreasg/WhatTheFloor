@@ -36,7 +36,7 @@ export default function CollectionsTable({ ArkyCollections }) {
                 <div className="w-full overflow-x-auto">
                     <table className="w-full">
                         <thead>
-                            <tr className="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+                            <tr className="text-md font-semibold tracking-wide text-left text-gray-100 bg-slate-900 uppercase border-b border-gray-600">
                                 <th className="px-4 py-3">Project Name</th>
                                 <th className="px-4 py-3">Tokens</th>
                                 <th className="px-4 py-3">Owner</th>
@@ -44,7 +44,7 @@ export default function CollectionsTable({ ArkyCollections }) {
                                 <th className="px-4 py-3">All Time Volume</th>
                             </tr>
                         </thead>
-                        <tbody className="bg-white">
+                        <tbody className="bg-gray-100">
                         {getVerifiedCollections}
                         </tbody>
                     </table>
