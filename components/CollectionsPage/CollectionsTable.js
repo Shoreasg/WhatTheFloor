@@ -3,12 +3,14 @@ import BigNumber from "bignumber.js"
 
 export default function CollectionsTable({ ArkyCollections }) {
     console.log(ArkyCollections)
+    const projectCount = 1
     const getVerifiedCollections = ArkyCollections.map((data, index) => {
-        console.log(data)
+       
         const floorPrice =  BigNumber(data.priceStat.floorPrice).shiftedBy(-12)
         return (
         <>
         {data.verifiedAt? <tr className="text-gray-700">
+        <td className="px-4 py-3 text-ms font-semibold border">{projectCount++}</td>
             <td className="px-4 py-3 border">
                 <div className="flex items-center text-sm">
                     <div className="relative w-8 h-8 mr-3 rounded-full md:block">
@@ -37,11 +39,12 @@ export default function CollectionsTable({ ArkyCollections }) {
                     <table className="w-full">
                         <thead>
                             <tr className="text-md font-semibold tracking-wide text-left text-gray-100 bg-slate-900 uppercase border-b border-gray-600">
+                                <th className="px-4 py-3">No.</th>
                                 <th className="px-4 py-3">Project Name</th>
                                 <th className="px-4 py-3">Tokens</th>
                                 <th className="px-4 py-3">Owner</th>
-                                <th className="px-4 py-3">Floor</th>
-                                <th className="px-4 py-3">All Time Volume</th>
+                                <th className="px-4 py-3">Floor Price on Arky</th>
+                                <th className="px-4 py-3">All Time Volume on Arky</th>
                             </tr>
                         </thead>
                         <tbody className="bg-gray-100">
