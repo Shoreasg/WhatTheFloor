@@ -2,7 +2,6 @@ import BigNumber from "bignumber.js"
 
 
 export default function CollectionsTable({ ArkyCollections }) {
-    console.log(ArkyCollections)
     const projectCount = 1
     const getVerifiedCollections = ArkyCollections.map((data, index) => {
        

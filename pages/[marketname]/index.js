@@ -1,15 +1,10 @@
-import { useRouter } from "next/router"
 import CollectionsTable from "../../components/CollectionsPage/CollectionsTable"
 import axios from "axios";
 import BigNumber from "bignumber.js"
 import { useEffect, useState } from "react"
 export default function MarketPlaceCollection() {
     const [getArkyCollections, setGetArkyCollections] = useState([]);
-    const router = useRouter()
-    const { marketname } = router.query
-
-
-
+   
     useEffect(() => {
         const getCollections = async () => {
             await axios.get(`${process.env.NEXT_PUBLIC_ARKY_URL}/nft/collection/list?limit=500`)
