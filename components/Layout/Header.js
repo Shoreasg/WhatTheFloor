@@ -11,7 +11,7 @@ const Header = () => {
         <div className="flex flex-row space-x-6 xl:space-x-14 bg-slate-900">
           <div className="ml-6">
             <Link href={"/"}>
-              <Image src="/WTF.svg" width={"90"} height={"90"} className="cursor-pointer"/>
+              <Image src="/WTF.svg" width={"90"} height={"90"} alt={"WTFLogo"} className="cursor-pointer"/>
             </Link>
           </div>
           {/* <div className="mt-8 text-neutral-200 hover:text-[#299197]">

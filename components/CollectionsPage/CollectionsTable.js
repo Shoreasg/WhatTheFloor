@@ -35,7 +35,7 @@ export default function CollectionsTable({ ArkyCollections, Loading }) {
 
     return (
         <>
-            {Loading ? <section className="container mx-10 p-6 font-mono">
+            {Loading ? <section className="container mx-auto p-6 font-mono">
                 <div className="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
                     <div className="w-full overflow-x-auto">
                         <table className="w-full animate-pulse">
