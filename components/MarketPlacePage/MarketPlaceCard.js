@@ -2,10 +2,10 @@ import Link from "next/link";
 export default function MarketPlaceCard({ TeamName, MarketDescription, MarketPlaceLogo, MarketName }) {
     return (
         <>
-            {MarketName === "Arky" ? <Link href={`/${MarketName}`}>
-                <div className="w-52 ml-2 mr-2 h-1/2 flex flex-col justify-center bg-slate-800 rounded-2xl drop-shadow-md hover:border-[#299197] hover:border-4  xl:w-96 xl:h-80 ">
+            {MarketName === "Arky" ? <Link href={`/arky`}>
+                <div className="w-52 ml-2 mr-2 h-[188px] flex flex-col justify-center bg-slate-800 rounded-2xl drop-shadow-md hover:border-[#299197] hover:border-4  xl:w-96 xl:h-80 cursor-pointer sm:h-[188px] md:h-[188px]">
                     <div className="flex justify-center">
-                        <img className="w-1/3 rounded-t-2xl" src={MarketPlaceLogo} />
+                        <img className=" rounded-t-2xl" src={MarketPlaceLogo} />
                     </div>
                     <div className="p-4">
                         <h1 className="text-xl font-medium text-slate-600 pb-2 text-center">{MarketName}</h1>
@@ -14,9 +14,9 @@ export default function MarketPlaceCard({ TeamName, MarketDescription, MarketPla
                     </div>
                 </div>
             </Link> :
-                <div className="w-52 ml-2 mr-2 h-1/2 flex flex-col justify-center bg-slate-800 rounded-2xl drop-shadow-md  xl:w-96 xl:h-80 ">
+                <div className="w-52 ml-2 mr-2 h-[188px] flex flex-col justify-center bg-slate-800 rounded-2xl drop-shadow-md  xl:w-96 xl:h-80 sm:h-fit md:h-fit">
                     <div className="flex justify-center">
-                        <img className="w-1/3 rounded-t-2xl" src={MarketPlaceLogo} />
+                        <img className="w-1/2 rounded-t-2xl" src={MarketPlaceLogo} />
                     </div>
                     <div className="p-4">
                         <h1 className="text-xl font-medium text-slate-600 pb-2 text-center">{MarketName}</h1>
