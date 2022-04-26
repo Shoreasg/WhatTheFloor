@@ -15,8 +15,11 @@ const Header = () => {
             </Link>
           </div>
           {/* <div className="mt-8 text-neutral-200 hover:text-[#299197]">
-            <Link href={"/about"}>About</Link>
+            <Link href={"/arky"}>Arky</Link>
           </div> */}
+          <div className="mt-8 text-neutral-200 hover:text-[#299197]">
+            <Link href={"/about"}>About</Link>
+          </div>
         </div>
       </nav>
     </>

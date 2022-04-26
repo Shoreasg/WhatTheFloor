@@ -10,9 +10,9 @@ export default function Arky() {
       <section>
         <div className="h-screen">
           <section className="flex flex-row items-center justify-evenly w-screen h-1/2 xl:mt-10 sm:mt-10">
-            <ArkyCollectionCard Name={"Verified Collections"} MarketName={"Arky"} Logo={"/verified.png"} Description={"Verified Collections are collections verified by Arky. They are usually safe to invest"} URL={"verifiedcollections"} />
-            {/* <ArkyCollectionCard Name={"Unverified Collections"} MarketPlaceLogo={"./zilkroad.png"} MarketDescription={"Coming Soon"} MarketName={"Zilkroad"} />
-            <ArkyCollectionCard Name={"Scam Collections"} MarketPlaceLogo={"./zilliqa-zil-logo.png"} MarketDescription={"Coming Soon"} MarketName={"Rialto"} /> */}
+            <ArkyCollectionCard Name={"Verified Collections"} Logo={"/verified.png"} Description={"Verified Collections are collections verified by Arky. They are usually safe to invest"} URL={"verifiedcollections"} />
+            <ArkyCollectionCard Name={"Unverified Collections"}  Description={"Unverified Collections are collections not verified by Arky. This means that you have to DYOR and consider carefully before investing!"} Logo={"/question-marks.png"} URL={"unverifiedcollections"} />
+            <ArkyCollectionCard Name={"Scam Collections"}  Description={"Scam Collections are Collections that are marked as scam by ARKY. DO NOT BUY FROM THEM"} Logo={"/warning.png"} URL={"scamcollections"} />
           </section>
         </div>
       </section>
