@@ -20,7 +20,7 @@ export default function ArkyScamCollectionsPage({ ArkyCollections, Loading }) {
                                 <div className="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                             </div>
                             <div>
-                            {CollectionName.includes("⚠")?<p className="font-semibold text-black">{CollectionName}</p>:<p className="font-semibold text-black">{CollectionName}⚠️</p>}
+                            {CollectionName.includes("⚠")?<p className="font-semibold text-black">{CollectionName}</p>:<p className="font-semibold text-black">{CollectionName} ⚠️</p>}
                             </div>
                         </div>
                     </td>

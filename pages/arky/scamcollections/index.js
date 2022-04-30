@@ -31,8 +31,8 @@ export default function UnverifiedCollections() {
         <>
             <section>
                 <div className="text-center text-slate-900 mt-28">
-                    <h1 className=" text-5xl font-medium ">All of these collections are marked as SCAM on ARKY!</h1>
-                    <h3 className=" text-4xl font-bold text-red-600">DO NOT BUY FROM THEM!</h3>
+                    <h1 className=" text-5xl font-medium ">All of these collections are verifed as SCAM by #zilfam and they are listed on ARKY!</h1>
+                    <h3 className=" text-4xl font-bold text-red-600 mt-10">DO NOT BUY THESE COLLECTIONS!</h3>
                 </div>
             </section>
             <div className="h-max">

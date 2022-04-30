@@ -31,8 +31,8 @@ export default function UnverifiedCollections() {
         <>
             <section>
                 <div className="text-center text-slate-900 mt-28">
-                    <h1 className=" text-5xl font-medium ">All of these collections are Unverified by Arky!</h1>
-                    <h3 className=" text-4xl font-bold text-red-600">DYOR before investing!</h3>
+                    <h1 className=" text-5xl font-medium">All of these collections are unverified and listed on Arky! If you are the owner of the collection, feel free to contact us on twitter</h1>
+                    <h3 className=" text-4xl font-bold text-red-600 mt-10">DYOR before investing!</h3>
                     <h3 className=" font-medium text-2xl mt-10">Data is sorted by All time Volume on Arky</h3>
                 </div>
             </section>
