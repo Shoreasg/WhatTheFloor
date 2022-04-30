@@ -9,13 +9,13 @@ export default function UnverifiedCollections() {
    
     useEffect(() => {
         const getCollections = async () => {
-            await axios.get(`${process.env.NEXT_PUBLIC_ARKY_URL}/nft/collection/list?limit=500`)
+            await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/arky/collections`)
                 .then(
                     ((res) => {
-                        const sorted = res.data.result.entries.sort((b,a)=>
+                        const sorted = res.data.sort((b,a)=>
                         {
                            
-                            return BigNumber(a.priceStat.allTimeVolume) - BigNumber(b.priceStat.allTimeVolume)
+                            return BigNumber(a.allTimeVolume) - BigNumber(b.allTimeVolume)
                         })
                         setGetArkyCollections(sorted)
                         setLoading(false)

@@ -3,30 +3,28 @@ import approximateNumber from "approximate-number"
 
 
 export default function ArkyVerfiiedCollectionsPage({ ArkyCollections, Loading }) {
-    console.log(ArkyCollections)
-
     const projectCount = 1
     const getVerifiedCollections = ArkyCollections.map((data) => {
 
-        const floorPrice = BigNumber(data.priceStat.floorPrice).shiftedBy(-12)
-        const AllTimeVolume = approximateNumber(BigNumber(data.priceStat.allTimeVolume).shiftedBy(-12),{capital:true,precision:4});
+        const floorPrice = BigNumber(data.floorPrice).shiftedBy(-12)
+        const AllTimeVolume = approximateNumber(BigNumber(data.allTimeVolume).shiftedBy(-12),{capital:true,precision:4});
         return (
             <>
-                {data.verifiedAt ? <tr className="text-gray-700">
+                {data.isVerified ? <tr className="text-gray-700">
                     <td className="px-4 py-3 text-ms font-semibold border">{projectCount++}</td>
                     <td className="px-4 py-3 border">
                         <div className="flex items-center text-sm">
                             <div className="relative w-8 h-8 mr-3 rounded-full md:block">
-                                <img className="object-cover w-full h-full rounded-full" src={data.profileImageUrl} alt="profileimage" loading="lazy" />
+                                <img className="object-cover w-full h-full rounded-full" src={data.profileImageURL} alt="profileimage" loading="lazy" />
                                 <div className="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                             </div>
                             <div>
-                                <p className="font-semibold text-black">{data.name}</p>
+                                <p className="font-semibold text-black">{data.collectionsName}</p>
                             </div>
                         </div>
                     </td>
-                    <td className="px-4 py-3 text-ms font-semibold border">{data.tokenStat.tokenCount}</td>
-                    <td className="px-4 py-3 text-ms font-semibold border">{data.tokenStat.holderCount}</td>
+                    <td className="px-4 py-3 text-ms font-semibold border">{data.totalToken}</td>
+                    <td className="px-4 py-3 text-ms font-semibold border">{data.numHolders}</td>
                     <td className="px-4 py-3 text-ms font-semibold border">{floorPrice.toString()} ZIL</td>
                     <td className="px-4 py-3 text-ms font-semibold border">{AllTimeVolume} ZIL</td>
                 </tr> : ""}
