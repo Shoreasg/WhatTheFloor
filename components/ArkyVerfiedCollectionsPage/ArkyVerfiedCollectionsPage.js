@@ -1,16 +1,17 @@
 import BigNumber from "bignumber.js"
 import approximateNumber from "approximate-number"
+import Link from "next/link"
 
 
-export default function ArkyVerfiiedCollectionsPage({ ArkyCollections, Loading }) {
-    const projectCount = 1
-    const getVerifiedCollections = ArkyCollections.map((data) => {
+export default function ArkyVerfiedCollectionsPage({ ArkyCollections, Loading }) {
+    let projectCount = 1
+    let getVerifiedCollections = ArkyCollections.map((data) => {
 
-        const floorPrice = BigNumber(data.floorPrice).shiftedBy(-12)
-        const AllTimeVolume = approximateNumber(BigNumber(data.allTimeVolume).shiftedBy(-12),{capital:true,precision:4});
+        let floorPrice = BigNumber(data.floorPrice).shiftedBy(-12)
+        let AllTimeVolume = approximateNumber(BigNumber(data.allTimeVolume).shiftedBy(-12), { capital: true, precision: 4 });
         return (
             <>
-                {data.isVerified ? <tr className="text-gray-700">
+                {data.isVerified ? <tbody className="bg-gray-100" key={data.tokenAddress}><tr className="text-gray-700" >
                     <td className="px-4 py-3 text-ms font-semibold border">{projectCount++}</td>
                     <td className="px-4 py-3 border">
                         <div className="flex items-center text-sm">
@@ -18,16 +19,16 @@ export default function ArkyVerfiiedCollectionsPage({ ArkyCollections, Loading }
                                 <img className="object-cover w-full h-full rounded-full" src={data.profileImageURL} alt="profileimage" loading="lazy" />
                                 <div className="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                             </div>
-                            <div>
-                                <p className="font-semibold text-black">{data.collectionsName}</p>
-                            </div>
+                            <p className="font-semibold text-black underline hover:text-[#299197]">
+                                <Link href={`/arky/verifiedcollections/${encodeURIComponent(data.collectionsName)}`}>{data.collectionsName}</Link>
+                            </p>
                         </div>
                     </td>
                     <td className="px-4 py-3 text-ms font-semibold border">{data.totalToken}</td>
                     <td className="px-4 py-3 text-ms font-semibold border">{data.numHolders}</td>
                     <td className="px-4 py-3 text-ms font-semibold border">{floorPrice.toString()} ZIL</td>
                     <td className="px-4 py-3 text-ms font-semibold border">{AllTimeVolume} ZIL</td>
-                </tr> : ""}
+                </tr></tbody> : ""}
 
             </>
         )
@@ -66,9 +67,9 @@ export default function ArkyVerfiiedCollectionsPage({ ArkyCollections, Loading }
                                     <th className="px-4 py-3">All Time Volume on Arky</th>
                                 </tr>
                             </thead>
-                            <tbody className="bg-gray-100">
-                                {getVerifiedCollections}
-                            </tbody>
+
+                            {getVerifiedCollections}
+
                         </table>
                     </div>
                 </div>
