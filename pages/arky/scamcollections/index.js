@@ -1,31 +1,23 @@
-import axios from "axios";
 import BigNumber from "bignumber.js"
-import { useEffect, useState } from "react"
 import ArkyScamCollectionsPage from "../../../components/ArkyScamCollectionsPage/ArkyScamCollectionsPage";
 
-export default function UnverifiedCollections() {
-    const [getArkyCollections, setGetArkyCollections] = useState([]);
-    const [Loading, setLoading] = useState(true);
-   
-    useEffect(() => {
-        const getCollections = async () => {
-            await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/arky/collections`)
-                .then(
-                    ((res) => {
-                        const sorted = res.data.sort((b,a)=>
-                        {
-                           
-                            return BigNumber(a.allTimeVolume) - BigNumber(b.allTimeVolume)
-                        })
-                        setGetArkyCollections(sorted)
-                        setLoading(false)
-                    })
-                )
+
+export async function getServerSideProps() {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/arky/collections`)
+    const data = await response.json()
+    return {
+        props:
+        {
+            arkyCollections: data,
         }
-        getCollections();
-    }, []);
+    }
+}
 
+export default function scamCollections({arkyCollections}) {
 
+    const sortCollections = arkyCollections.sort((b, a) => {
+        return BigNumber(a.allTimeVolume) - BigNumber(b.allTimeVolume)
+    })
 
     return (
         <>
@@ -36,7 +28,7 @@ export default function UnverifiedCollections() {
                 </div>
             </section>
             <div className="h-max">
-                <ArkyScamCollectionsPage ArkyCollections={getArkyCollections} Loading={Loading}/>
+                <ArkyScamCollectionsPage ArkyCollections={sortCollections}/>
             </div>
         </>)
 }

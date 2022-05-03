@@ -4,14 +4,14 @@ import approximateNumber from "approximate-number"
 
 export default function ArkyScamCollectionsPage({ ArkyCollections, Loading }) {
 
-    const projectCount = 1
-    const getScamCollections = ArkyCollections.map((data) => {
-        const CollectionName = data.collectionsName
-        const floorPrice = BigNumber(data.floorPrice).shiftedBy(-12)
-        const AllTimeVolume = approximateNumber(BigNumber(data.allTimeVolume).shiftedBy(-12), { capital: true, precision: 4 });
+    let projectCount = 1
+    let getScamCollections = ArkyCollections.map((data) => {
+        let CollectionName = data.collectionsName
+        let floorPrice = BigNumber(data.floorPrice).shiftedBy(-12)
+        let AllTimeVolume = approximateNumber(BigNumber(data.allTimeVolume).shiftedBy(-12), { capital: true, precision: 4 });
         return (
             <>
-                {data.isScam === true ? <tr className="text-gray-700">
+                {data.isScam === true ? <tbody className="bg-gray-100" key={data.tokenAddress}><tr className="text-gray-700">
                     <td className="px-4 py-3 text-ms font-semibold border">{projectCount++}</td>
                     <td className="px-4 py-3 border">
                         <div className="flex items-center text-sm">
@@ -20,7 +20,7 @@ export default function ArkyScamCollectionsPage({ ArkyCollections, Loading }) {
                                 <div className="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                             </div>
                             <div>
-                            {CollectionName.includes("⚠")?<p className="font-semibold text-black">{CollectionName}</p>:<p className="font-semibold text-black">{CollectionName} ⚠️</p>}
+                                {CollectionName.includes("⚠") ? <p className="font-semibold text-black">{CollectionName}</p> : <p className="font-semibold text-black">{CollectionName} ⚠️</p>}
                             </div>
                         </div>
                     </td>
@@ -28,7 +28,7 @@ export default function ArkyScamCollectionsPage({ ArkyCollections, Loading }) {
                     <td className="px-4 py-3 text-ms font-semibold border">{data.numHolders}</td>
                     <td className="px-4 py-3 text-ms font-semibold border">{floorPrice.toString()} ZIL</td>
                     <td className="px-4 py-3 text-ms font-semibold border">{AllTimeVolume} ZIL</td>
-                </tr> : ""}
+                </tr></tbody> : ""}
 
             </>
         )
@@ -67,9 +67,7 @@ export default function ArkyScamCollectionsPage({ ArkyCollections, Loading }) {
                                     <th className="px-4 py-3">All Time Volume on Arky</th>
                                 </tr>
                             </thead>
-                            <tbody className="bg-gray-100">
-                                {getScamCollections}
-                            </tbody>
+                            {getScamCollections}
                         </table>
                     </div>
                 </div>
