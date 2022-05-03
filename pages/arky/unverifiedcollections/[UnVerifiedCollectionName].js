@@ -1,8 +1,9 @@
+import ArkyUnverifiedCollectionsDetails from "../../../components/ArkyUnverifiedCollectionsDetailsPage/ArkyUnverifiedCollectionsDetails"
 import ArkyUnverifiedCollectionsProfile from "../../../components/ArkyUnverifiedCollectionsDetailsPage/ArkyUnverifiedCollectionsProfile"
 
 export async function getServerSideProps(context) {
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/arky/verfiedcollections/${encodeURIComponent(context.params.UnVerifiedCollectionName)}`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/arky/collections/${encodeURIComponent(context.params.UnVerifiedCollectionName)}`)
     const data = await response.json()
     return {
         props:
@@ -27,6 +28,7 @@ export default function CollectionName({collectionDetails}) {
         <>
             <section className="h-max">
                 <ArkyUnverifiedCollectionsProfile collectionDetails={collectionDetails}/>
+                <ArkyUnverifiedCollectionsDetails/>
             </section>
         </>
     )

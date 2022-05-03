@@ -1,4 +1,4 @@
-export default function ArkyVerifiedCollectionsDetails()
+export default function ArkyUnverifiedCollectionsDetails()
 {
     return(
         <div className="h-screen flex flex-col justify-center bg-gray-400">

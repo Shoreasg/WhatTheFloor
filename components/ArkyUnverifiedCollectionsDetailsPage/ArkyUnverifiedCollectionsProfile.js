@@ -1,7 +1,7 @@
 import { SocialIcon } from 'react-social-icons';
 export default function ArkyUnverifiedCollectionsProfile({ collectionDetails }) {
     return (
-        <div className="h-screen bg-gray-200  dark:bg-gray-800 flex">
+        <div className="h-fit bg-gray-200  dark:bg-gray-800 flex">
             <div className="lg:w-full xl:w-full sm:w-full md:w-full bg-white shadow-lg w-full">
                 <div className="flex justify-center">
                    {collectionDetails.profileImageURL ? <img className="h-32 w-32 bg-white p-2" src={collectionDetails.profileImageURL} alt="profile_image" />:<img className="h-32 w-32 bg-white p-2" src={"/WTF.svg"} alt="profile_image" />} 

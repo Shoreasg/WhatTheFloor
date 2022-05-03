@@ -3,7 +3,7 @@ import ArkyVerifiedCollectionsProfile from '../../../components/ArkyVerifiedColl
 
 export async function getServerSideProps(context) {
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/arky/verfiedcollections/${encodeURIComponent(context.params.CollectionName)}`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/arky/collections/${encodeURIComponent(context.params.CollectionName)}`)
     const data = await response.json()
     return {
         props:
